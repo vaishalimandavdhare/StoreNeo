@@ -1,0 +1,122 @@
+<div class="container mt-5">
+        <div class="card">
+          <div class="row">
+              <div class="col-md-6">
+                <div class="preview">
+                  <div class="preview-pic tab-content" id="myTabContent">
+                    
+                    <div class="tab-pane fade show active" id="ImgTab1" role="tabpanel" aria-labelledby="ImgTab1">
+                        <div class="my-img active"><img class="actual-img" [src]="outputId.images[0]?.ImgURL" class="img-fluid"></div>
+                    </div>
+                    <div class="tab-pane fade" id="ImgTab2" role="tabpanel" aria-labelledby="ImgTab2">
+                        <div class="my-img active"><img class="actual-img" [src]="outputId.images[1]?.ImgURL" class="img-fluid"></div>
+                    </div>
+                    <div class="tab-pane fade" id="ImgTab3" role="tabpanel" aria-labelledby="ImgTab3">
+                        <div class="my-img active"><img class="actual-img" [src]="outputId.images[2]?.ImgURL" class="img-fluid"></div>
+                    </div>
+                  </div>
+                  <ul class="preview-thumbnail nav nav-tabs"  id="myTab" role="tablist">
+                    <li  class="nav-item">
+                      <a class="nav-link active" id="ImgTab1" data-toggle="tab" href="#ImgTab1" role="tab" aria-controls="ImgTab1" aria-selected="true"><div class="my-img-thumb"><img [src]="outputId.images[0]?.ImgURL" class="img-fluid"></div></a>
+                      
+                    </li>
+                    <li  class="nav-item">
+                        <a class="nav-link" id="ImgTab2" data-toggle="tab" href="#ImgTab2" role="tab" aria-controls="ImgTab2" aria-selected="false"><div class="my-img-thumb"><img [src]="outputId.images[1]?.ImgURL" class="img-fluid"></div></a>
+                    </li>
+                    <li  class="nav-item">
+                        <a class="nav-link" id="ImgTab3" data-toggle="tab" href="#ImgTab3" role="tab" aria-controls="ImgTab3" aria-selected="false">
+                            <div class="my-img-thumb"><img [src]="outputId.images[2]?.ImgURL" class="img-fluid"></div>
+                        </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+              <div class="col-md-6 ">
+                <div class="details">
+                  <h3 class="text-danger">{{outputId.product_name}} </h3>
+    
+                  <div class="text-warning">
+                    <i class="fa fa-lg fa-star"></i>
+                    <i class="fa fa-lg fa-star"></i>
+                    <i class="fa fa-lg fa-star"></i>
+                    <i class="fa fa-lg fa-star-o"></i>
+                    <i class="fa fa-lg fa-star-o"></i>
+                  </div>
+    
+                  <hr>
+                  <h4>Price: <span class="text-success">{{outputId.product_cost}} $</span></h4>
+                  <h4>Color:
+                    <span class="color" style="background: #B32E2E"></span>
+                  </h4>
+    
+                  <div class="action">
+                    <h4>Share on
+                      <i class="fa fa-share-alt fa-lg"></i>
+                    </h4>
+                    <div class="share-container">
+                      <a href="#" class="btn btn-primary"><i class="fa fa-lg fa-facebook"></i></a>&nbsp;
+                      <a href="#" class="btn btn-danger"><i class="fa fa-lg fa-google"></i></a>&nbsp;
+                      <a href="#" class="btn btn-info"><i class="fa fa-lg fa-twitter"></i></a>&nbsp;
+                      <a href="#" class="btn btn-primary"><i class="fa fa-lg fa-linkedin"></i></a>&nbsp;
+                      <a href="#" class="btn btn-success"><i class="fa fa-lg fa-whatsapp"></i></a>
+                    </div>
+                  </div>
+    
+                  <div class="action">
+                    <button class="btn btn-primary mr-3" type="button">ADD TO CART</button>
+                    <button type="button" class="btn btn-warning" data-toggle="modal" data-target=".bs-example-modal-sm">RATE PRODUCT</button>
+    
+                    <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                      <div class="modal-dialog modal-sm" role="document">
+                        <div class="modal-content">
+                          <div class="modal-body">
+                            <div class="text-warning text-center">
+                              <i class="fa fa-lg fa-star"></i>
+                              <i class="fa fa-lg fa-star"></i>
+                              <i class="fa fa-lg fa-star"></i>
+                              <i class="fa fa-lg fa-star-o"></i>
+                              <i class="fa fa-lg fa-star-o"></i>
+                            </div>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-default" data-dismiss="modal">CLOSE</button>
+                            <button type="button" class="btn btn-primary">RATE IT</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+          </div>
+          <hr>
+          <div class="row">
+            <div class="col-md-12">
+              <div class="preview">
+                <div>
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                          <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Home</a>
+                        </li>
+                        <li class="nav-item">
+                          <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Detail</a>
+                        </li>
+                        <!-- <li class="nav-item">
+                          <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Product</a>
+                        </li> -->
+                      </ul>
+                      <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">{{outputId.product_description}}</div>
+                        <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">{{outputId.product_dimension}}</div>
+                        <!-- <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">making it over 2000 years old. Richard McClintock, a Latin</div> -->
+                      </div>
+                  
+                  
+                  
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+</div>
+    

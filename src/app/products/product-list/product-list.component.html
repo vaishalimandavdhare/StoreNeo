@@ -1,0 +1,28 @@
+<h3 class="text-center mb-5">Popular Products <small><a routerLink="/view-all" >--View all</a></small></h3>
+<div class="row">
+            <div class="col-md-4 mb-4"  *ngFor="let product of products.slice(0, 5);">
+                <div class="card text-center">
+                    <img class="card-img-top img img-fluid" [src]="product.images[0].ImgURL"  alt="Card image cap">
+                    <div class="card-body">
+                      <h5 class="card-title"><a [routerLink]="['/product-details',product.id]" >{{product.product_name}}</a></h5>
+                      <!-- <p class="card-text">{{product.product_description}}</p> -->
+                      <h6>{{product.product_cost}}</h6>
+                      <div>
+                        <!-- <i class="fa fa-lg fa-star"></i>
+                        <i class="fa fa-lg fa-star"></i>
+                        <i class="fa fa-lg fa-star"></i>
+                        <i class="fa fa-lg fa-star-o"></i>
+                        <i class="fa fa-lg fa-star-o"></i> -->
+                        {{product.product_avg_rating}}
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            
+
+</div> 
+<div class="row my-5">
+  <div class="col-md-12">
+    <a routerLink="/create-product" class="btn btn-danger">Add New Product</a>
+  </div>
+</div>

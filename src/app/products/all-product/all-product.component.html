@@ -1,0 +1,105 @@
+<div class="container mt-5">
+  <div class="row">
+    <!-- Sidebar -->
+    <div class="col-md-3">
+        <div id="accordion">
+            <div class="card">
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      Categories
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <ul class="p-0 m-0">
+                      <li class="list-group-item border-0" *ngFor="let categoryItem of categories">
+                          <a href="#"><i class="fa fa-dot-circle-o"></i> {{categoryItem.category_name}}</a>
+                        </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-header" id="headingTwo">
+                <h5 class="mb-0">
+                  <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Colors
+                  </button>
+                </h5>
+              </div>
+              <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                <div class="card-body">
+                    <span class="mr-2"  *ngFor="let colorItem of colors">
+                        <button type="button" data-toggle="tooltip" data-placement="top" title="{{colorItem.color_name}}"  [ngStyle]="{'backgorundColor': colors}" class="color-box">
+                          <!-- {{colorItem.color_code}} -->
+                        </button>
+                     </span>
+                </div>
+              </div>
+            </div>
+            <!-- <app-category></app-category>
+            <app-colors></app-colors> -->
+        </div>
+    </div>
+
+      <!-- Product list -->
+      <div class="col-md-9 ">
+        <div class="row justify-content-between">
+          
+              <h5 class="col-md-4">Product List</h5>
+              <div class="col-md-8">
+                <a routerLink="/create-product" class="btn btn-danger text-white">Add New Product</a>
+                <h5>Sort By : </h5>
+                <ul class="nav nav-pills" role="tablist">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#tab1" aria-controls="tab1" role="tab" data-toggle="tab">
+                        <i class="fa fa-star" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link"  aria-controls="tab2" role="tab" data-toggle="tab">
+                        <i class="fa fa-inr" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#tab3" aria-controls="tab3" role="tab" data-toggle="tab">
+                        <i class="fa fa-inr" aria-hidden="true"></i>
+                        <i class="fa fa-arrow-down" aria-hidden="true"></i>
+                    </a>
+                  </li>
+                </ul>
+                
+              </div>
+          
+        </div>
+        
+        <hr/>
+        <br>
+        <div class="row">
+        <div class="col-md-4 mb-4" *ngFor="let product of products">
+          
+            <div class="card text-center">
+                <img class="card-img-top img img-fluid" [src]="product.images[0].ImgURL"  alt="Card image cap">
+                <div class="card-body">
+                  <h5 class="card-title"><a [routerLink]="['/product-details',product.id]" >{{product.product_name}}</a></h5>
+                  <!-- <p class="card-text">{{product.product_description}}</p> -->
+                  <h6>{{product.product_cost}}</h6>
+                  <div>
+                    <!-- <i class="fa fa-lg fa-star"></i>
+                    <i class="fa fa-lg fa-star"></i>
+                    <i class="fa fa-lg fa-star"></i>
+                    <i class="fa fa-lg fa-star-o"></i>
+                    <i class="fa fa-lg fa-star-o"></i> -->
+                    {{product.product_avg_rating}}
+                  </div>
+                </div>
+              </div>
+        </div>
+      </div>
+      </div>
+    </div>
+</div>

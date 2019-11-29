@@ -1,0 +1,14 @@
+footer {
+    background-color: #563d7c;
+    color: #fff;
+    height: 250px;
+    width: 100%;
+    /* overflow: hidden; */
+}
+footer a{
+    color: #fff;
+}
+
+footer .copywrite{
+    background-color: #322348
+}

@@ -1,0 +1,16 @@
+<div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Colors
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+              <span class="mr-2"  *ngFor="let colorItem of colors">
+                  <button type="button" data-toggle="tooltip" data-placement="top" title="{{colorItem.color_name}}" class="color-box">{{colorItem.color_name}}</button>
+               </span>
+          </div>
+        </div>
+      </div>
