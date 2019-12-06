@@ -32,8 +32,8 @@
               </div>
               <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
                 <div class="card-body">
-                    <span class="mr-2"  *ngFor="let colorItem of colors">
-                        <button type="button" data-toggle="tooltip" data-placement="top" title="{{colorItem.color_name}}"  [ngStyle]="{'backgorundColor': colors}" class="color-box">
+                    <span class="mr-2"  *ngFor="let  colorItem of colors">
+                        <button type="button" data-toggle="tooltip" data-placement="top" title="{{colorItem.color_name}}"  [ngStyle]="{'backgroundColor': colorItem.color_code}" class="color-box">
                           <!-- {{colorItem.color_code}} -->
                         </button>
                      </span>
@@ -50,8 +50,8 @@
         <div class="row justify-content-between">
           
               <h5 class="col-md-4">Product List</h5>
-              <div class="col-md-8">
-                <a routerLink="/create-product" class="btn btn-danger text-white">Add New Product</a>
+              <div class="col-md-8 d-flex justify-content-end">
+                <a routerLink="/create-product" class="btn btn-danger text-white mr-3">Add New Product</a>
                 <h5>Sort By : </h5>
                 <ul class="nav nav-pills" role="tablist">
                   <li class="nav-item active">

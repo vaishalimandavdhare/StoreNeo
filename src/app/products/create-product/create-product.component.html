@@ -3,61 +3,56 @@
                 <div class="row">
                     <div class="col-md-12">
                             <h5 class="mb-5">Create Product </h5>
-                            <form>
+                            <form #empForm = "ngForm" (ngSubmit) = "onClickSubmit(empForm.value)">
                                 <div class="row">
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product name</label>
-                                                <input type="text" class="form-control" name="product_name" placeholder="Enter product name"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_name"  value="product_name" name="product_name" placeholder="Enter product name"/>
                                             </div>
                                     </div>
                                     
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Category ID</label>
-                                                <input type="text" class="form-control" name="categoryId" placeholder="Enter product name"/>
+                                                <input type="text" class="form-control" [(ngModel)]="categoryId" value="categoryId"   name="categoryId" placeholder="Enter product name"/>
                                             </div>
                                     </div>
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product Produccer</label>
-                                                <input type="text" class="form-control" name="product_producer" placeholder="Enter product name"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_producer" value="product_producer"  name="product_producer" placeholder="Enter product name"/>
                                             </div>
                                     </div>
-                                    <div class="col-md-6">
-                                            <div class="form-group">
-                                                <label for="">Product Description</label>
-                                                <textarea class="form-control" rows="5" col="5" name="product_description"></textarea>
-                                            </div>
-                                    </div>
+                                    
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product Cost</label>
-                                                <input type="text" class="form-control" name="product_cost" placeholder="Enter product cost"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_cost" value="product_cost"  name="product_cost" placeholder="Enter product cost"/>
                                             </div>
                                     </div>
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product Stock</label>
-                                                <input type="text" class="form-control" name="product_stock" placeholder="Enter product stock"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_stock" value="product_stock"  name="product_stock" placeholder="Enter product stock"/>
                                             </div>
                                     </div>
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product Average rating</label>
-                                                <input type="text" class="form-control" name="product_avg_rating" placeholder="Enter product stock"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_avg_rating" value="product_avg_rating"  name="product_avg_rating" placeholder="Enter product stock"/>
                                             </div>
                                     </div>
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product color</label>
-                                                <input type="text" class="form-control" name="product_color" placeholder="Enter product color"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_color"  value="product_color"  name="product_color" placeholder="Enter product color"/>
                                             </div>
                                     </div>
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product dimension</label>
-                                                <input type="text" class="form-control" name="product_dimension" placeholder="Enter product dimension"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_dimension"  value="product_dimension"  name="product_dimension" placeholder="Enter product dimension"/>
                                             </div>
                                     </div>
                                    
@@ -66,12 +61,12 @@
                                                 <label for="">Product IsActive</label>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="optradio">Yes
+                                                        <input type="radio" class="form-check-input" [(ngModel)]="product_isactive" value="Yes" name="optradio">Yes
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                            <input type="radio" class="form-check-input" name="optradio">No
+                                                            <input type="radio" class="form-check-input" [(ngModel)]="product_isactive" value="No"  name="optradio">No
                                                     </label>
                                                 </div>
                                             </div>
@@ -79,9 +74,18 @@
                                     <div class="col-md-6">
                                             <div class="form-group">
                                                 <label for="">Product material</label>
-                                                <input type="text" class="form-control" name="product_material" placeholder="Enter product material"/>
+                                                <input type="text" class="form-control" [(ngModel)]="product_material"  value="product_material"  name="product_material" placeholder="Enter product material"/>
                                             </div>
-                                    </div>  
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label for="">Product Description</label>
+                                            <textarea class="form-control" rows="5" col="5"  [(ngModel)]="product_description" value="product_description"  name="product_description"></textarea>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12 mb-5 text-center">
+                                        <button type="submit" class="btn btn-success">Save</button>
+                                    </div> 
                                 </div>
                             </form>
                     </div>

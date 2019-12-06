@@ -30,7 +30,7 @@ export class AllProductComponent implements OnInit {
     this.shareData.getColors().subscribe(data => {
       console.log(data);
       this.colors = data;
-    })
+    });
     
   }
 
